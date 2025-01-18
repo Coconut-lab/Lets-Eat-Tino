@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,7 +50,51 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_selectedIndex],
+      appBar: AppBar(
+        toolbarHeight: 100,
+        elevation: 0,
+        backgroundColor: Colors.white,
+        flexibleSpace: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0),
+              child: Image.asset(
+                'assets/LetsEatTino.png',
+                width: 50,
+                height: 50,
+                fit: BoxFit.contain,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '000님 환영해요!',
+                    style: GoogleFonts.doHyeon(
+                      textStyle: TextStyle(fontSize: 14, color: Colors.black),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Image.asset(
+                    'assets/User1.png',
+                    width: 50,
+                    height: 50,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: Container(
+        color: Colors.white,
+        child: _screens[_selectedIndex],
+      ),
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min, // Column의 높이를 최소화
         children: [
@@ -106,10 +153,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Home Screen',
-        style: TextStyle(fontSize: 24),
+    return Container(
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 70),
+          Image.asset(
+            'assets/MainTino.png',
+            width: 300,
+            height: 300,
+            fit: BoxFit.contain,
+          ),
+        ],
       ),
     );
   }
