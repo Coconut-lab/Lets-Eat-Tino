@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  provider: ^6.0.5
 
   intl: ^0.18.0
 
@@ -61,6 +62,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/partners.json
     - assets/LetsEatTino.png
     - assets/MainTino.png
     - assets/User1.png
@@ -79,6 +81,7 @@ flutter:
     - assets/Welcome.png
     - assets/Welcome2.png
     - assets/XTino.png
+    - assets/partners_image/partner1.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
